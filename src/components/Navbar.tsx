@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, Phone, Search } from 'lucide-react';
@@ -20,13 +19,28 @@ const Navbar = () => {
             </a>
             
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6">
-              <a href="#about" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">ABOUT</a>
-              <a href="#programs" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">CITIZENSHIP</a>
-              <a href="#residence" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">RESIDENCE</a>
-              <a href="#blog" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">BLOG</a>
-              <a href="#faqs" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">FAQS</a>
-              <a href="#contact" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">CONTACT</a>
+            <div className="hidden lg:flex items-center space-x-1">
+              <Button variant="ghost" className="text-[#1A1F2C] hover:text-secondary uppercase text-sm font-medium">
+                About
+              </Button>
+              <Button variant="ghost" className="text-[#1A1F2C] hover:text-secondary uppercase text-sm font-medium">
+                Our Programs
+              </Button>
+              <Button variant="ghost" className="text-[#1A1F2C] hover:text-secondary uppercase text-sm font-medium">
+                Compare
+              </Button>
+              <Button variant="ghost" className="text-[#1A1F2C] hover:text-secondary uppercase text-sm font-medium">
+                News
+              </Button>
+              <Button variant="ghost" className="text-[#1A1F2C] hover:text-secondary uppercase text-sm font-medium">
+                FAQs
+              </Button>
+              <Button variant="ghost" className="text-[#1A1F2C] hover:text-secondary uppercase text-sm font-medium">
+                Contact us
+              </Button>
+              <Button className="bg-[#1A1F2C] text-white hover:bg-[#1A1F2C]/90 uppercase text-sm font-medium ml-2">
+                Check Eligibility
+              </Button>
             </div>
           </div>
 
