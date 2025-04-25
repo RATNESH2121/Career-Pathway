@@ -1,51 +1,104 @@
 
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
-const ProgramCard = ({ title, description, category }: { title: string; description: string; category: string }) => {
+const ProgramCard = ({ 
+  title, 
+  image, 
+  icon,
+  minInvestment, 
+  processingTime,
+  visaFreeTravel,
+  familyDependents
+}: { 
+  title: string;
+  image: string;
+  icon: string;
+  minInvestment: string;
+  processingTime: string;
+  visaFreeTravel: string;
+  familyDependents: string;
+}) => {
   return (
-    <div className="bg-white shadow-md p-6 flex flex-col h-full">
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
-      <p className="text-sm text-gray-600 mb-6">{description}</p>
-      <div className="mt-auto">
-        <div className="text-xs text-gray-500 mb-2">Program Type: <span className="font-semibold">{category}</span></div>
-        <button className="text-xs border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors uppercase tracking-wide">Learn More</button>
+    <Card className="overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300">
+      <div className="relative h-48 overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90" />
+        <div className="absolute bottom-[-30px] left-1/2 -translate-x-1/2">
+          <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center border-4 border-white">
+            <img src={icon} alt={`${title} icon`} className="w-10 h-10" />
+          </div>
+        </div>
       </div>
-    </div>
+      
+      <CardContent className="pt-10 pb-6 px-6">
+        <h3 className="text-2xl font-semibold text-center mb-2">{title}</h3>
+        <p className="text-primary text-center mb-6 text-sm">{minInvestment}</p>
+        
+        <div className="space-y-4 text-sm">
+          <div>
+            <strong className="text-primary">Processing time</strong> - {processingTime}
+          </div>
+          <div>
+            <strong className="text-primary">Visa free travel</strong> - {visaFreeTravel}
+          </div>
+          <div>
+            <strong className="text-primary">Family dependents</strong> - {familyDependents}
+          </div>
+        </div>
+        
+        <div className="mt-6 text-center">
+          <Button 
+            variant="secondary" 
+            className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700"
+          >
+            LEARN MORE
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
 const Programs = () => {
   const programs = [
     {
-      title: "MALTA",
-      description: "Malta offers one of the strongest passports in the world, providing visa-free access to 186 countries.",
-      category: "Citizenship"
+      title: "TURKEY",
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
+      icon: "/icons/turkey.png",
+      minInvestment: "Minimum Investment USD 400,000",
+      processingTime: "The average processing time to obtain Turkey citizenship is 2-5 months.",
+      visaFreeTravel: "Turkey passport holders have visa-free entry to 111 countries, including Japan, South Korea, and Singapore.",
+      familyDependents: "Spouses and Children under 18 years old."
     },
     {
       title: "DOMINICA",
-      description: "Obtain citizenship in as little as 3-4 months with one of the most affordable citizenship programs available.",
-      category: "Citizenship"
+      image: "https://images.unsplash.com/photo-1562171910-e196b111c8bf",
+      icon: "/icons/dominica.png",
+      minInvestment: "Minimum contribution USD 200,000",
+      processingTime: "The average processing time to obtain Dominica citizenship is 4 months.",
+      visaFreeTravel: "Instant visa-free to 142 countries, including the Schengen States, Singapore, Hong Kong, and China",
+      familyDependents: "Spouse, children up to 30 years old, parents/grandparents above the age of 65 years."
     },
     {
       title: "SAINT LUCIA",
-      description: "Become a citizen of Saint Lucia in less than 4 months with their streamlined citizenship by investment program.",
-      category: "Citizenship"
+      image: "https://images.unsplash.com/photo-1599946347371-68eb71b16afc",
+      icon: "/icons/saint-lucia.png",
+      minInvestment: "Minimum contribution USD 240,000",
+      processingTime: "The average processing time to obtain Saint Lucia citizenship is 3 - 4 months.",
+      visaFreeTravel: "Instant visa-free travel to 146 countries, including the Schengen countries, United Kingdom, Singapore, and Hong Kong.",
+      familyDependents: "Spouses, Children up to 30 years old, elderly parents over the age of 55 years, and siblings under 18 years"
     }
   ];
 
   return (
     <section id="programs" className="py-16 bg-white">
       <div className="container-custom">
-        <h2 className="heading-secondary text-center mb-4 text-primary">OUR PROGRAMS</h2>
-        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-sm">
-          Citizenship Invest offers a range of citizenship by investment and residency programs designed to meet the specific needs of investors and their families seeking global mobility solutions. Our government-approved programs provide a streamlined path to citizenship or residency.
-        </p>
-
-        <div className="flex flex-wrap gap-8 justify-center mb-10">
-          <Button className="bg-primary hover:bg-primary/90 text-white border border-primary px-8">
+        <div className="flex justify-center gap-4 mb-12">
+          <Button className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg">
             CITIZENSHIP PROGRAMS
           </Button>
-          <Button variant="outline" className="text-primary border-primary hover:bg-primary/5 px-8">
+          <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 px-12 py-6 text-lg">
             RESIDENCY PROGRAMS
           </Button>
         </div>
@@ -54,12 +107,6 @@ const Programs = () => {
           {programs.map((program, index) => (
             <ProgramCard key={index} {...program} />
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 px-10">
-            VIEW ALL PROGRAMS
-          </Button>
         </div>
       </div>
     </section>
