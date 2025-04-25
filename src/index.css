@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -32,6 +32,10 @@
   body {
     @apply bg-background text-foreground font-inter antialiased;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
 }
 
 @layer components {
@@ -54,4 +58,50 @@
   .btn-outline {
     @apply border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary/10 transition-colors;
   }
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+  animation-delay: calc(var(--animation-order, 0) * 100ms);
+  opacity: 0;
+}
+
+/* Custom styles for the CitizenshipInvest clone */
+.text-gradient {
+  background: linear-gradient(to right, #0A2540, #0A2540);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Carousel custom styles */
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+/* Background watermark text for about section */
+.bg-watermark {
+  opacity: 0.05;
+  font-size: 20rem;
+  line-height: 1;
+  font-weight: 700;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Remove default root max-width from App.css */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }

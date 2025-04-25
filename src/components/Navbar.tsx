@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Search } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,21 +11,35 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-montserrat font-bold text-primary">
-              Citizenship<span className="text-secondary">Invest</span>
+            <a href="/" className="mr-8">
+              <img 
+                src="/lovable-uploads/ccd42351-bd67-4248-a711-195c65dd53e5.png" 
+                alt="CitizenshipInvest Logo" 
+                className="h-12"
+              />
             </a>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <a href="#about" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">ABOUT</a>
+              <a href="#programs" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">CITIZENSHIP</a>
+              <a href="#residence" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">RESIDENCE</a>
+              <a href="#blog" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">BLOG</a>
+              <a href="#faqs" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">FAQS</a>
+              <a href="#contact" className="text-gray-700 hover:text-secondary transition-colors text-sm font-medium">CONTACT</a>
+            </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <a href="#programs" className="text-gray-700 hover:text-secondary transition-colors">Programs</a>
-            <a href="#countries" className="text-gray-700 hover:text-secondary transition-colors">Countries</a>
-            <a href="#about" className="text-gray-700 hover:text-secondary transition-colors">About Us</a>
-            <a href="#contact" className="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+          <div className="hidden lg:flex items-center space-x-4">
+            <Button variant="ghost" className="text-gray-700 text-sm">
+              <Phone className="mr-1 h-4 w-4" /> +971 4 430 1717
+            </Button>
+            <Button variant="ghost" className="text-gray-700">
+              <Search className="h-4 w-4" />
+            </Button>
             <Button variant="ghost" className="text-gray-700">
               EN <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
-            <Button className="bg-secondary hover:bg-secondary/90">Get Started</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -40,14 +54,18 @@ const Navbar = () => {
         {isOpen && (
           <div className="lg:hidden pb-6">
             <div className="flex flex-col space-y-4">
-              <a href="#programs" className="text-gray-700 hover:text-secondary transition-colors">Programs</a>
-              <a href="#countries" className="text-gray-700 hover:text-secondary transition-colors">Countries</a>
-              <a href="#about" className="text-gray-700 hover:text-secondary transition-colors">About Us</a>
-              <a href="#contact" className="text-gray-700 hover:text-secondary transition-colors">Contact</a>
+              <a href="#about" className="text-gray-700 hover:text-secondary transition-colors">ABOUT</a>
+              <a href="#programs" className="text-gray-700 hover:text-secondary transition-colors">CITIZENSHIP</a>
+              <a href="#residence" className="text-gray-700 hover:text-secondary transition-colors">RESIDENCE</a>
+              <a href="#blog" className="text-gray-700 hover:text-secondary transition-colors">BLOG</a>
+              <a href="#faqs" className="text-gray-700 hover:text-secondary transition-colors">FAQS</a>
+              <a href="#contact" className="text-gray-700 hover:text-secondary transition-colors">CONTACT</a>
+              <Button variant="ghost" className="justify-start text-gray-700">
+                <Phone className="mr-1 h-4 w-4" /> +971 4 430 1717
+              </Button>
               <Button variant="ghost" className="justify-start text-gray-700">
                 EN <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
-              <Button className="bg-secondary hover:bg-secondary/90">Get Started</Button>
             </div>
           </div>
         )}
