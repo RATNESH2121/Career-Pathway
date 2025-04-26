@@ -4,16 +4,9 @@ import { Mail, Phone, MessageSquare, Send } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative bg-gray-100 h-screen">
-      {/* Background Image/Video */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <img 
-          src="/lovable-uploads/d00a44b8-ab54-42de-94bf-d229948f1acd.png"
-          alt="Hero Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="relative h-screen">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-700 to-gray-800"></div>
 
       {/* Content */}
       <div className="relative z-20 container-custom h-full flex items-center justify-between">
@@ -31,33 +24,28 @@ const Hero = () => {
         </div>
         
         {/* Floating Passports Grid */}
-        <div className="hidden lg:block absolute right-[5%] top-1/2 transform -translate-y-1/2">
+        <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2">
           <div className="grid grid-cols-4 gap-4 max-w-[800px]">
-            {[...Array(12)].map((_, index) => (
-              <div key={index} className="w-[150px] h-[100px] shadow-lg transition-transform hover:scale-105 duration-300">
-                <img 
-                  src={`/passport-${index + 1}.jpg`}
-                  alt={`Passport ${index + 1}`}
-                  className="w-full h-full object-cover rounded-sm"
-                />
-              </div>
-            ))}
+            <div className="w-[150px] h-[100px] shadow-lg transition-transform hover:scale-105">
+              <img src="/lovable-uploads/241a28a6-c637-4bc5-8364-b4446f29d02b.png" alt="Passports Grid" className="w-full h-full object-contain" />
+            </div>
+            {/* Add more passport placeholders as needed */}
           </div>
         </div>
       </div>
 
       {/* Contact buttons */}
-      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-0">
-        <Button variant="ghost" className="bg-[#1A1F2C]/90 text-white hover:bg-[#1A1F2C] w-16 h-16 rounded-none">
+      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col">
+        <Button variant="ghost" className="bg-[#4A235A] text-white hover:bg-[#4A235A]/90 w-16 h-16 rounded-none flex items-center justify-center">
           <Mail className="h-5 w-5" />
         </Button>
-        <Button variant="ghost" className="bg-[#1A1F2C]/90 text-white hover:bg-[#1A1F2C] w-16 h-16 rounded-none">
+        <Button variant="ghost" className="bg-[#4A235A] text-white hover:bg-[#4A235A]/90 w-16 h-16 rounded-none flex items-center justify-center">
           <Phone className="h-5 w-5" />
         </Button>
-        <Button variant="ghost" className="bg-[#1A1F2C]/90 text-white hover:bg-[#1A1F2C] w-16 h-16 rounded-none">
+        <Button variant="ghost" className="bg-[#4A235A] text-white hover:bg-[#4A235A]/90 w-16 h-16 rounded-none flex items-center justify-center">
           <MessageSquare className="h-5 w-5" />
         </Button>
-        <Button variant="ghost" className="bg-[#1A1F2C]/90 text-white hover:bg-[#1A1F2C] w-16 h-16 rounded-none">
+        <Button variant="ghost" className="bg-[#4A235A] text-white hover:bg-[#4A235A]/90 w-16 h-16 rounded-none flex items-center justify-center">
           <Send className="h-5 w-5" />
         </Button>
       </div>
