@@ -25,7 +25,7 @@ const Hero = () => {
             {/* Top Row: 5 Passports */}
             <div className="flex justify-center space-x-4 pt-20">
               <img
-                src="./public/p1.jpg"
+                src="./p1.jpg"
                 alt="Passport 1"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -34,7 +34,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p2.jpg"
+                src="./p2.jpg"
                 alt="Passport 2"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -43,7 +43,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p33.jpg"
+                src="./p33.jpg"
                 alt="Passport 3"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -52,7 +52,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p4.jpg"
+                src="./p4.jpg"
                 alt="Passport 4"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -61,7 +61,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p51.jpg"
+                src="./p51.jpg"
                 alt="Passport 5"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -73,7 +73,7 @@ const Hero = () => {
             {/* Middle Row: 4 Passports */}
             <div className="flex justify-center space-x-4">
               <img
-                src="./public/p6.jpg"
+                src="./p6.jpg"
                 alt="Passport 6"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -82,7 +82,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p7.jpg"
+                src="./p7.jpg"
                 alt="Passport 7"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -91,7 +91,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p9.jpg"
+                src="./p9.jpg"
                 alt="Passport 8"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -100,7 +100,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p10.jpg"
+                src="./p10.jpg"
                 alt="Passport 9"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -112,7 +112,7 @@ const Hero = () => {
             {/* Bottom Row: 3 Passports */}
             <div className="flex justify-center space-x-4">
               <img
-                src="./public/p2.jpg"
+                src="./p2.jpg"
                 alt="Passport 10"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -121,7 +121,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p2.jpg"
+                src="./p2.jpg"
                 alt="Passport 11"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
@@ -130,7 +130,7 @@ const Hero = () => {
                 }}
               />
               <img
-                src="./public/p2.jpg"
+                src="./p2.jpg"
                 alt="Passport 12"
                 className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
                 style={{
