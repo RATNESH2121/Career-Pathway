@@ -19,8 +19,8 @@ const About = () => {
       <img
         src="/public/w1.png"
         alt="World Map"
-        className="absolute top-0 left-0 w-full max-w-8xl opacity-5 pointer-events-none select-none z-0"
-        style={{ left: '10%', top: '4rem' }}
+        className="absolute top-0 left-0 w-full max-w-6xl opacity-5 pointer-events-none select-none z-0 object-contain"
+        style={{ left: '50%', top: '4rem', transform: 'translateX(-50%)' }}
       />
       {/* Large faded CI logo */}
       <div
@@ -33,31 +33,31 @@ const About = () => {
           className="w-full max-w-[1800px] pl-[90px] pr-[100px] opacity-10 select-none pointer-events-none"
         />
       </div>
-      <div className="container-custom relative z-10 flex flex-col items-start">
-        <div className="w-full max-w-xl text-left pl-16">
+      <div className="container-custom relative z-10 flex flex-col items-start px-4 sm:px-8 lg:px-16">
+        <div className="w-full max-w-xl text-left">
           <h2
             className="heading-secondary text-primary font-2xl uppercase mb-4 text-left whitespace-pre-line tracking-widest"
             style={{ letterSpacing: '0.12em' }}
           >
             {`ABOUT\nPATHWAY\nCITIZENSHIP`}
           </h2>
-          <p className="text-gray-700 mb-6 text-sm md:text-base max-w-xl text-left">
+          <p className="text-gray-700 mb-6 text-sm sm:text-base max-w-xl text-left">
             Pathway citizenship, a pioneer advisory firm, specializes in fast investor programs for residence and citizenship worldwide. Annually, it assists hundreds of individuals and families globally in securing a second citizenship by investment. Accredited by multiple governments, it holds strong credentials to process citizenships.
           </p>
         </div>
         {/* Crests Row */}
-        <div className="flex justify-start gap-8 mb-4 w-full pl-16">
+        <div className="flex flex-wrap justify-start gap-4 sm:gap-8 mb-4 w-full">
           {crests.map((crest, index) => (
             <img
               key={index}
               src={crest.src}
               alt={crest.alt}
-              className="h-16 w-auto object-contain grayscale"
+              className="h-12 sm:h-16 w-auto object-contain grayscale"
             />
           ))}
         </div>
         {/* Subtext */}
-        <div className="w-full text-left mt-1 pl-16">
+        <div className="w-full text-left mt-1">
           <span className="uppercase tracking-widest text-sm font-medium text-black">
             MULTIPLE GOVERNMENTS AUTHORIZED FIRM
           </span>

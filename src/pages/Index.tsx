@@ -19,7 +19,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <CountriesCount />
+      {/* <CountriesCount /> */}
       {/* <NewsLogos /> */}
       <Programs />
       {/* <ClientCompanies /> */}

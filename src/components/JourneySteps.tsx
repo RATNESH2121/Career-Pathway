@@ -32,26 +32,41 @@ const JourneySteps = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container-custom">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-30">
+      <div className="container-custom px-4 sm:px-8 lg:px-16">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-3xl font-montserrat font-normal tracking-[0.25em] text-primary text-center uppercase mb-12">YOUR JOURNEY WITH PATHWAY CITIZENSHIP</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <h2 className="text-2xl sm:text-3xl md:text-3xl font-montserrat font-normal tracking-[0.25em] text-primary text-center uppercase mb-6 sm:mb-8 lg:mb-12">
+          YOUR JOURNEY WITH PATHWAY CITIZENSHIP
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left: Image */}
           <div className="flex justify-center h-full">
-            <img src="/r1.jpg" alt="Journey Passport" className="w-full max-w-lg rounded shadow-lg object-cover" style={{ height: '400px', objectFit: 'cover' }} />
+            <img
+              src="/r1.jpg"
+              alt="Journey Passport"
+              className="w-full max-w-lg rounded shadow-lg object-cover"
+              style={{ height: '300px sm:height-350px lg:height-400px', objectFit: 'cover' }}
+            />
           </div>
           {/* Right: Steps */}
           <div className="w-full">
             {steps.map((step, idx) => (
-              <div key={idx} className="flex flex-col py-4  border-b border-gray-300 last:border-b-0">
+              <div key={idx} className="flex flex-col py-3 sm:py-4 border-b border-gray-300 last:border-b-0">
                 <div className="flex items-center cursor-pointer" onClick={() => toggleDetails(idx)}>
-                  <span className="text-3xl md:text-4xl font-bold text-gray-300 mr-6 font-montserrat" style={{minWidth: '2.5rem'}}>{idx + 1}.</span>
-                  <span className="text-base md:text-lg font-bold text-primary tracking-wide uppercase flex-1 font-montserrat">{step.title}</span>
-                  <ChevronDown className={`ml-4 text-gray-400 w-6 h-6 transition-transform ${openIndex === idx ? 'rotate-180' : ''}`} />
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300 mr-4 sm:mr-6 font-montserrat" style={{ minWidth: '2rem sm:minWidth:2.5rem' }}>
+                    {idx + 1}.
+                  </span>
+                  <span className="text-sm sm:text-base md:text-lg font-bold text-primary tracking-wide uppercase flex-1 font-montserrat">
+                    {step.title}
+                  </span>
+                  <ChevronDown
+                    className={`ml-2 sm:ml-4 text-gray-400 w-5 sm:w-6 h-5 sm:h-6 transition-transform ${openIndex === idx ? 'rotate-180' : ''}`}
+                  />
                 </div>
                 {openIndex === idx && (
-                  <p className="mt-4 text-gray-600 text-base leading-relaxed pl-8 pr-4">{step.detail}</p>
+                  <p className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base leading-relaxed px-4 sm:px-8">
+                    {step.detail}
+                  </p>
                 )}
               </div>
             ))}

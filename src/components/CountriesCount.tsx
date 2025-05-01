@@ -25,17 +25,17 @@ const CountriesCount = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-primary text-white">
-      <div className="container-custom text-center">
+    <section className="py-8 sm:py-12 bg-primary text-white">
+      <div className="container-custom text-center px-4 sm:px-8 lg:px-16">
         <div className="flex flex-col items-center">
-          {/* Flex row with increased number size to maintain layout */}
-          <div className="flex items-center justify-center space-x-8">
-            <div className="text-9xl font-bold">+{Math.round(count)}</div>
-            <div className="uppercase text-xl font-semibold tracking-widest">
+          {/* Flex row with responsive number size and spacing */}
+          <div className="flex items-center justify-center space-x-4 sm:space-x-8">
+            <div className="text-6xl sm:text-8xl lg:text-9xl font-bold">+{Math.round(count)}</div>
+            <div className="uppercase text-base sm:text-lg lg:text-xl font-semibold tracking-widest">
               Countries<br />Worldwide
             </div>
           </div>
-          <p className="max-w-lg mx-auto mt-6 text-sm text-gray-300">
+          <p className="max-w-md sm:max-w-lg mx-auto mt-4 sm:mt-6 text-xs sm:text-sm lg:text-base text-gray-300">
             Pathway Citizenship has successfully processed applications for thousands of families and individuals from around the globe.
           </p>
         </div>

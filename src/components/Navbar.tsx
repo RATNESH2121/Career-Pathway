@@ -13,7 +13,7 @@ const Navbar = () => {
 
           <a href="/" className="flex items-center">
             <img
-              src="/fcl1.png" // Path to your logo image
+              src="/public/fcl1.png" // Path to your logo image
               alt="Pathway Citizenship Logo"
               className="h-10 w-auto" // Adjust size here
             />
