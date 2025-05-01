@@ -6,11 +6,11 @@ const About = () => {
   const [logoSize, setLogoSize] = React.useState(40);
   // Array of crest images with unique src and alt text
   const crests = [
-    { src: "/public/c2.jpg", alt: "Crest 1" },
-    { src: "/public/c1.jpg", alt: "Crest 2" },
-    { src: "/public/c2.jpg", alt: "Crest 3" },
-    { src: "/public/c1.jpg", alt: "Crest 4" },
-    { src: "/public/c2.jpg", alt: "Crest 5" },
+    { src: "/c2.jpg", alt: "Crest 1" },
+    { src: "/c1.jpg", alt: "Crest 2" },
+    { src: "/c2.jpg", alt: "Crest 3" },
+    { src: "/c1.jpg", alt: "Crest 4" },
+    { src: "/c2.jpg", alt: "Crest 5" },
   ];
 
   return (

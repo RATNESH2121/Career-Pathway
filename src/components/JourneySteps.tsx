@@ -39,7 +39,7 @@ const JourneySteps = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left: Image */}
           <div className="flex justify-center h-full">
-            <img src="/public/r1.jpg" alt="Journey Passport" className="w-full max-w-lg rounded shadow-lg object-cover" style={{ height: '400px', objectFit: 'cover' }} />
+            <img src="/r1.jpg" alt="Journey Passport" className="w-full max-w-lg rounded shadow-lg object-cover" style={{ height: '400px', objectFit: 'cover' }} />
           </div>
           {/* Right: Steps */}
           <div className="w-full">

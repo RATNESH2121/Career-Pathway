@@ -92,7 +92,7 @@ const Programs = () => {
 
     {
       title: "DOMINICA",
-      image: "/public/pr1.jpg", // Local path to the main image
+      image: "/pr1.jpg", // Local path to the main image
       icon: "/icons/dominica-icon.png", // Local path to the icon
       minInvestment: "Minimum contribution USD 200,000",
       processingTime: "The average processing time to obtain Dominica citizenship is 4 months.",
