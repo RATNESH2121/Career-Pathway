@@ -20,12 +20,12 @@ const Index = () => {
       <Hero />
       <About />
       <CountriesCount />
-      <NewsLogos />
+      {/* <NewsLogos /> */}
       <Programs />
-      <ClientCompanies />
-      <SecondPassport />
+      {/* <ClientCompanies /> */}
+      {/* <SecondPassport /> */}
       <JourneySteps />
-      <LatestNews />
+      {/* <LatestNews /> */}
       <AmbassadorProgram />
       <Newsletter />
       <Footer />

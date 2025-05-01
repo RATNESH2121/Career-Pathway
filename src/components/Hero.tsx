@@ -1,35 +1,144 @@
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Mail, Phone, MessageSquare, Send } from 'lucide-react';
+import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MessageSquare, Send } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-700 to-gray-800"></div>
-
+    <div className="relative py-8 bg-[#183B4E]">
       {/* Content */}
-      <div className="relative z-20 container-custom h-full flex items-center justify-between">
-        <div className="max-w-2xl text-white pt-20">
-          <h1 className="text-5xl lg:text-[3.5rem] font-light mb-6 leading-tight tracking-wide">
-            Global Leader in<br />
-            Fast Citizenship<br />
-            and Residency Programs
+      <div className="relative z-20 container-custom flex items-center justify-between">
+        <div className="max-w-2xl text-white">
+          <h1 className="text-5xl lg:text-[3.5rem] font-light mb-6 leading-tight tracking-wide text-left">
+            Pathway to your new Home!
           </h1>
           <div className="mt-12">
-            <h2 className="text-4xl font-light italic" style={{ fontFamily: 'Great Vibes, cursive' }}>
-              Your Future First
-            </h2>
-          </div>
+  <h2 className="text-4xl font-semibold text-left text-white leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+    Your Trusted Citizenship Partner
+  </h2>
+</div>
         </div>
-        
-        {/* Floating Passports Grid */}
-        <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2">
-          <div className="grid grid-cols-4 gap-4 max-w-[800px]">
-            <div className="w-[150px] h-[100px] shadow-lg transition-transform hover:scale-105">
-              <img src="/lovable-uploads/241a28a6-c637-4bc5-8364-b4446f29d02b.png" alt="Passports Grid" className="w-full h-full object-contain" />
+        {/* Passport Grid */}
+        <div className="hidden lg:flex items-center justify-center h-full ml-12">
+          <div className="grid gap-4 mt-4">
+            {/* Top Row: 5 Passports */}
+            <div className="flex justify-center space-x-4 pt-20">
+              <img
+                src="./public/p1.jpg"
+                alt="Passport 1"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(5deg)",
+                }}
+              />
+              <img
+                src="./public/p2.jpg"
+                alt="Passport 2"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(-5deg)",
+                }}
+              />
+              <img
+                src="./public/p33.jpg"
+                alt="Passport 3"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(5deg)",
+                }}
+              />
+              <img
+                src="./public/p4.jpg"
+                alt="Passport 4"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(-5deg)",
+                }}
+              />
+              <img
+                src="./public/p51.jpg"
+                alt="Passport 5"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(5deg)",
+                }}
+              />
             </div>
-            {/* Add more passport placeholders as needed */}
+            {/* Middle Row: 4 Passports */}
+            <div className="flex justify-center space-x-4">
+              <img
+                src="./public/p6.jpg"
+                alt="Passport 6"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(-5deg)",
+                }}
+              />
+              <img
+                src="./public/p7.jpg"
+                alt="Passport 7"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(5deg)",
+                }}
+              />
+              <img
+                src="./public/p9.jpg"
+                alt="Passport 8"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(-5deg)",
+                }}
+              />
+              <img
+                src="./public/p10.jpg"
+                alt="Passport 9"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(5deg)",
+                }}
+              />
+            </div>
+            {/* Bottom Row: 3 Passports */}
+            <div className="flex justify-center space-x-4">
+              <img
+                src="./public/p2.jpg"
+                alt="Passport 10"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(-5deg)",
+                }}
+              />
+              <img
+                src="./public/p2.jpg"
+                alt="Passport 11"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(5deg)",
+                }}
+              />
+              <img
+                src="./public/p2.jpg"
+                alt="Passport 12"
+                className="w-20 h-28 object-cover rounded transform hover:scale-105 transition-all duration-300"
+                style={{
+                  boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.2)",
+                  transform: "perspective(1000px) rotateY(-5deg)",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

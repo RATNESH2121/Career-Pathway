@@ -45,11 +45,11 @@ const Footer = () => {
             <h3 className="font-semibold text-sm mb-4 uppercase">HEADQUARTERS</h3>
             <ul className="space-y-2 text-xs text-gray-300">
               <li>Prime Tower, 20th Floor</li>
-              <li>Business Bay, Dubai</li>
-              <li>United Arab Emirates</li>
+              <li>Brazil</li>
+              <li>United States of America </li>
               <li className="pt-2">TEL: +971 4 430 1717</li>
               <li>FAX: +971 4 430 1916</li>
-              <li>EMAIL: info@citizenshipinvest.com</li>
+              <li>EMAIL: info@pathwaycitizenship.com</li>
             </ul>
           </div>
           
