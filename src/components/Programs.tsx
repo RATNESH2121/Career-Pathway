@@ -1,64 +1,90 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const ProgramCard = ({ 
   title, 
   image, 
-  icon,
   minInvestment, 
   processingTime,
   visaFreeTravel,
-  familyDependents
+  familyDependents,
+  stampWidth = "150px",
+  stampHeight = "150px"
 }: { 
   title: string;
   image: string;
-  icon: string;
   minInvestment: string;
   processingTime: string;
   visaFreeTravel: string;
   familyDependents: string;
+  stampWidth?: string;
+  stampHeight?: string;
 }) => {
+  const fallbackImage = "https://via.placeholder.com/400x200?text=Program+Image";
+
   return (
-    <Card className="overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300">
-      <div className="relative h-40 sm:h-48 overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/10" />
-        <div className="absolute bottom-[-30px] left-1/2 -translate-x-1/2">
-          <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-gray-200 flex items-center justify-center border-4 border-white">
-            <img src={icon} alt={`${title} icon`} className="w-12 sm:w-14 h-12 sm:h-14" />
-          </div>
+    <div className="relative" role="region" aria-label={`Program card for ${title}`}>
+      <Card className="overflow-hidden bg-white rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+        <div className="relative h-48 overflow-hidden">
+          <img 
+            src={image || fallbackImage} 
+            alt={`${title} program`} 
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            onError={(e) => (e.currentTarget.src = fallbackImage)}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
         </div>
-      </div>
-      
-      <CardContent className="pt-6 sm:pt-10 pb-4 sm:pb-6 px-4 sm:px-6">
-        <h3 className="text-xl sm:text-2xl font-semibold text-center text-gray-800 mb-2">{title}</h3>
-        <div className="space-y-3 sm:space-y-4 text-sm">
-          <div>
-            <strong className="text-gray-800">Investment Amount</strong> - {minInvestment}
+        
+        <CardContent className="pt-6 pb-6 px-6 relative">
+          <h3 className="text-2xl font-bold text-center text-gray-900 mb-4 tracking-tight">{title}</h3>
+          <div className="space-y-4 text-sm text-gray-700">
+            <div className="flex items-start">
+              <strong className="text-gray-900 min-w-[110px] font-medium">Investment</strong>
+              <span className="flex-1">{minInvestment}</span>
+            </div>
+            <div className="flex items-start">
+              <strong className="text-gray-900 min-w-[110px] font-medium">Processing</strong>
+              <span className="flex-1">{processingTime}</span>
+            </div>
+            <div className="flex items-start">
+              <strong className="text-gray-900 min-w-[110px] font-medium">Visa-Free</strong>
+              <span className="flex-1">{visaFreeTravel}</span>
+            </div>
+            <div className="flex items-start">
+              <strong className="text-gray-900 min-w-[110px] font-medium">Dependents</strong>
+              <span className="flex-1">{familyDependents}</span>
+            </div>
+            <div className="flex items-start">
+              <strong className="text-gray-900 min-w-[110px] font-medium">Fee</strong>
+              <span className="flex-1">TBD</span>
+            </div>
           </div>
-          <div>
-            <strong className="text-gray-800">Processing time</strong> - {processingTime}
+          {/* Money Back Guarantee Stamp */}
+          <div className="absolute bottom-8 right-4 transform rotate-[-15deg] z-10">
+            <img 
+              src="/m1.png"
+              alt="100% Money Back Guarantee"
+              style={{ 
+                width: '180px', 
+                height: 'auto', 
+                opacity: 0.6,
+                filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
+              }}
+            />
           </div>
-          <div>
-            <strong className="text-gray-800">Visa free travel</strong> - {visaFreeTravel}
+
+          <div className="text-center mt-6">
+            <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
+              aria-label={`Learn more about ${title} program`}
+            >
+              LEARN MORE
+            </Button>
           </div>
-          <div>
-            <strong className="text-gray-800">Family dependents</strong> - {familyDependents}
-          </div>
-          <div>
-            <strong className="text-gray-800">Fee</strong> - TBD
-          </div>
-        </div>
-        <div className="mt-4 sm:mt-6 text-center">
-          <Button 
-            variant="secondary" 
-            className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700"
-          >
-            LEARN MORE
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 
@@ -66,8 +92,7 @@ const Programs = () => {
   const programs = [
     {
       title: "TURKEY",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
-      icon: "/icons/turkey.png",
+      image: "./image.jpg",
       minInvestment: "Minimum Investment USD 400,000",
       processingTime: "The average processing time to obtain Turkey citizenship is 2-5 months.",
       visaFreeTravel: "Turkey passport holders have visa-free entry to 111 countries, including Japan, South Korea, and Singapore.",
@@ -75,8 +100,7 @@ const Programs = () => {
     },
     {
       title: "DOMINICA",
-      image: "/pr1.jpg",
-      icon: "/icons/dominica-icon.png",
+      image: "/image3.jpg",
       minInvestment: "Minimum contribution USD 200,000",
       processingTime: "The average processing time to obtain Dominica citizenship is 4 months.",
       visaFreeTravel: "Instant visa-free to 142 countries, including the Schengen States, Singapore, Hong Kong, and China",
@@ -84,8 +108,7 @@ const Programs = () => {
     },
     {
       title: "SAINT LUCIA",
-      image: "https://images.unsplash.com/photo-1599946347371-68eb71b16afc",
-      icon: "/icons/saint-lucia.png",
+      image: "/image4.jpg",
       minInvestment: "Minimum contribution USD 240,000",
       processingTime: "The average processing time to obtain Saint Lucia citizenship is 3 - 4 months.",
       visaFreeTravel: "Instant visa-free travel to 146 countries, including the Schengen countries, United Kingdom, Singapore, and Hong Kong.",
@@ -94,10 +117,10 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-      <div className="container-custom px-4 sm:px-8 lg:px-16">
+    <section id="programs" className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white" aria-label="Our Programs Section">
+      <div className="container-custom px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
         {/* OUR PROGRAMS Heading */}
-        <div className="relative text-center mb-6 sm:mb-8 lg:mb-12">
+        <div className="relative text-center mb-12">
           <svg
             className="absolute left-1/2 top-0 -translate-x-1/2 -z-10"
             width="600"
@@ -111,38 +134,74 @@ const Programs = () => {
             </pattern>
             <rect width="600" height="100" fill="url(#dots)" opacity="0.05" />
           </svg>
-          <div className="flex items-center justify-center gap-2 sm:gap-4">
-            <hr className="flex-1 border-t-2 border-gray-300" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-gray-800 tracking-widest" style={{ letterSpacing: '0.2em' }}>
+          <div className="flex items-center justify-center gap-4">
+            <hr className="flex-1 border-t-2 border-primary/20" />
+            <h2 className="text-4xl md:text-5xl font-extrabold uppercase text-gray-900 tracking-widest" style={{ letterSpacing: '0.25em' }}>
               OUR PROGRAMS
             </h2>
-            <hr className="flex-1 border-t-2 border-gray-300" />
+            <hr className="flex-1 border-t-2 border-primary/20" />
           </div>
-          <p className="text-gray-600 text-center mt-2 sm:mt-4 max-w-3xl mx-auto text-sm md:text-base line-clamp-3">
+          <p className="text-gray-600 text-center mt-4 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Pathway citizenship has a leading position in the niche industry of fast citizenship and residency by investment. These programs do not require living in the country to obtain the citizenship or residency and they allow dual citizenship and nationality. No specific qualifications are expected from applicants other having a clean criminal record and making an investment.
           </p>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6 sm:mb-8 lg:mb-12">
-          <Button className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <Button 
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-lg w-full sm:w-auto"
+            aria-label="View Citizenship Programs"
+          >
             CITIZENSHIP PROGRAMS
           </Button>
-          <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto">
+          <Button 
+            variant="outline" 
+            className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold rounded-lg w-full sm:w-auto"
+            aria-label="View Residency Programs"
+          >
             RESIDENCY PROGRAMS
           </Button>
         </div>
 
-        {/* Program Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
-          {programs.map((program, index) => (
-            <ProgramCard key={index} {...program} />
-          ))}
-        </div>
+        {/* Carousel */}
+        <Carousel 
+          className="w-full max-w-3xl mx-auto"
+          opts={{
+            align: "center",
+            loop: true,
+            dragFree: false,
+          }}
+        >
+          <CarouselContent className="-ml-4">
+            {programs.map((program, index) => (
+              <CarouselItem key={index} className="pl-4 basis-full">
+                <div className="p-4">
+                  <ProgramCard 
+                    {...program} 
+                    stampWidth="150px"
+                    stampHeight="150px"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious 
+            className="bg-primary/80 text-white hover:bg-primary w-12 h-12 rounded-full"
+            aria-label="Previous program"
+          />
+          <CarouselNext 
+            className="bg-primary/80 text-white hover:bg-primary w-12 h-12 rounded-full"
+            aria-label="Next program"
+          />
+        </Carousel>
 
         {/* View All Programs Button */}
-        <div className="text-center mt-6 sm:mt-8 lg:mt-12">
-          <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg">
+        <div className="text-center mt-12">
+          <Button 
+            variant="outline" 
+            className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold rounded-lg"
+            aria-label="View all programs"
+          >
             VIEW ALL PROGRAMS
           </Button>
         </div>
