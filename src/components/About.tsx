@@ -36,13 +36,13 @@ const About = () => {
       <div className="container-custom relative z-10 flex flex-col items-start px-4 sm:px-8 lg:px-16">
         <div className="w-full max-w-xl text-left">
           <h2
-            className="heading-secondary text-primary font-2xl uppercase mb-4 text-left whitespace-pre-line tracking-widest"
-            style={{ letterSpacing: '0.12em' }}
+            className="heading-secondary text-primary font-2xl uppercase mb-4 text-left whitespace-pre-line tracking-widest font-bold"
+            style={{ letterSpacing: '0.12em', textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}
           >
             {`ABOUT\nPATHWAY\nCITIZENSHIP`}
           </h2>
-          <p className="text-gray-700 mb-6 text-sm sm:text-base max-w-xl text-left">
-            Pathway citizenship, a pioneer advisory firm, specializes in fast investor programs for residence and citizenship worldwide. Annually, it assists hundreds of individuals and families globally in securing a second citizenship by investment. Accredited by multiple governments, it holds strong credentials to process citizenships.
+          <p className="text-gray-800 mb-24 text-sm sm:text-base max-w-xl text-left font-medium">
+          Pathway Citizenship helps people and families get second citizenship or residency through investment programs. We work with clients from around the world and make the process smooth and reliable. Trusted by several governments, we are known for our fast and professional service.
           </p>
         </div>
         {/* Crests Row */}

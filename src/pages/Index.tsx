@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   // Replace with Aryan's actual WhatsApp number (e.g., '+971123456789')
-  const whatsappNumber = '+918002599534';
+  const whatsappNumber = '+5511940153966';
   const whatsappMessage = encodeURIComponent(
     'Hello, I’d like to learn more about Pathway Citizenship programs!'
   );

@@ -117,7 +117,7 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white" aria-label="Our Programs Section">
+    <section id="programs" className="py-16 lg:py-24 bg-gray-50" aria-label="Our Programs Section">
       <div className="container-custom px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
         {/* OUR PROGRAMS Heading */}
         <div className="relative text-center mb-12">
@@ -135,14 +135,14 @@ const Programs = () => {
             <rect width="600" height="100" fill="url(#dots)" opacity="0.05" />
           </svg>
           <div className="flex items-center justify-center gap-4">
-            <hr className="flex-1 border-t-2 border-primary/20" />
-            <h2 className="text-4xl md:text-5xl font-extrabold uppercase text-gray-900 tracking-widest" style={{ letterSpacing: '0.25em' }}>
+            <hr className="flex-1 border-t-2 border-gray-900/20" />
+            <h2 className="text-4xl md:text-5xl font-extrabold uppercase text-gray-900 tracking-widest" style={{ letterSpacing: '0.25em', textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>
               OUR PROGRAMS
             </h2>
-            <hr className="flex-1 border-t-2 border-primary/20" />
+            <hr className="flex-1 border-t-2 border-gray-900/20" />
           </div>
-          <p className="text-gray-600 text-center mt-4 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-            Pathway citizenship has a leading position in the niche industry of fast citizenship and residency by investment. These programs do not require living in the country to obtain the citizenship or residency and they allow dual citizenship and nationality. No specific qualifications are expected from applicants other having a clean criminal record and making an investment.
+          <p className="text-gray-800 text-center mt-4 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-medium">
+          Pathway Citizenship holds a top position in the specialized field of fast-track citizenship and residency through investment. These programs offer the benefit of gaining citizenship or residency without the need to live in the country and support dual nationality. Applicants are only required to have a clean criminal record and make the necessary investment—no other qualifications are needed.
           </p>
         </div>
 

@@ -8,7 +8,7 @@ const steps = [
   },
   {
     title: "WE ONBOARD YOU AS A PATHWAY CITIZENSHIP CLIENT",
-    detail: "We guide you through the onboarding process, ensuring all paperwork is in order and you’re fully prepared to start your journey with us."
+    detail: "We guide you through the onboarding process, ensuring all paperwork is in order and you're fully prepared to start your journey with us."
   },
   {
     title: "WE SUPPORT YOU WITH THE APPLICATION PROCESS",
@@ -32,10 +32,10 @@ const JourneySteps = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gray-30">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container-custom px-4 sm:px-8 lg:px-16">
         {/* Section Title */}
-        <h2 className="text-2xl sm:text-3xl md:text-3xl font-montserrat font-normal tracking-[0.25em] text-primary text-center uppercase mb-6 sm:mb-8 lg:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-3xl font-montserrat font-bold tracking-[0.25em] text-gray-900 text-center uppercase mb-6 sm:mb-8 lg:mb-12" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>
           YOUR JOURNEY WITH PATHWAY CITIZENSHIP
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
